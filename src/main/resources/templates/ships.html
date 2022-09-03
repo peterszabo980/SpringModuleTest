@@ -9,16 +9,16 @@
 
 <div id="container">
   <div id="menubar">
-    <a class="nav-link" data-th-href="@{/fleet}">A flottában lévő űrhajók</a>
-    <a class="nav-link" data-th-href="@{/fleet/active}">Aktivitás jelző</a>
+    <a data-th-href="@{/ships}">A flottában lévő űrhajók</a>
+    <a data-th-href="@{/ships/active}">Aktivitás jelző</a>
   </div>
   <div>
     <table>
       <tr>
-        <th>Registration Code</th>
-        <th>Name</th>
-        <th>Spaceship Class</th>
-        <th>Is active</th>
+        <th>Regisztrációs kód</th>
+        <th>Név</th>
+        <th>Űrhajó osztály</th>
+        <th>Aktív?</th>
       </tr>
       <tr data-th-each="spaceship : ${spaceships}">
         <td data-th-text="${spaceship.registrationCode}"></td>
