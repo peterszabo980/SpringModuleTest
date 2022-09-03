@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Armada</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div id="container">
+  <div id="menubar">
+    <a class="nav-link" data-th-href="@{/fleet}">A flottában lévő űrhajók</a>
+    <a class="nav-link" data-th-href="@{/fleet/active}">Aktivitás jelző</a>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <th>Registration Code</th>
+        <th>Name</th>
+        <th>Spaceship Class</th>
+        <th>Is active</th>
+      </tr>
+      <tr data-th-each="spaceship : ${spaceships}">
+        <td data-th-text="${spaceship.registrationCode}"></td>
+        <td data-th-text="${spaceship.name}"></td>
+        <td data-th-text="${spaceship.spaceShipClass}"></td>
+        <td data-th-text="${spaceship.isActive}"></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
