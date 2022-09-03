@@ -15,7 +15,7 @@ import java.util.List;
  * (See app.helpers.ShipData for more details.)
  */
 @Entity
-public class SpaceShip {
+public class  SpaceShip {
 
     @Id
     @GeneratedValue

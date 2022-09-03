@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface SpaceShipRepo extends CrudRepository<SpaceShip, Long> {
     List<SpaceShip> findByisActiveTrue();
+
+    SpaceShip findByName(String name);
 }

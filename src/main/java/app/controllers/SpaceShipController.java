@@ -6,6 +6,7 @@ import app.services.SpaceShipService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -26,12 +27,29 @@ public class SpaceShipController {
         return "spaceship_new";
     }
 
-    @GetMapping(value = {"/space"})
+    @GetMapping(value = {"/ships"})
     public String getAllShips(Model model) {
         List<SpaceShip> spaceShips = spaceShipService.getAll();
         model.addAttribute("spaceships", spaceShips);
 
         return "ships";
     }
+
+    @GetMapping(value = {"/ships/active"})
+    public String getActiveShips(Model model) {
+        List<SpaceShip> spaceShips = spaceShipService.getActiveShips();
+        model.addAttribute("spaceships", spaceShips);
+
+        return "ships";
+    }
+
+    @GetMapping(value = {"/ships/{name}"})
+    public String getShipCrew(@PathVariable String name, Model model) {
+        SpaceShip spaceShip = spaceShipService.findByName(name);
+        model.addAttribute("spaceships", spaceShip);
+
+        return "crew";
+    }
+
 
 }
