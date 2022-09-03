@@ -92,8 +92,14 @@ public class  SpaceShip {
     public boolean isActive() {
         return isActive;
     }
-
+    public boolean getisActive() {
+        return isActive;
+    }
     public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    public void setIsActive(boolean active) {
         isActive = active;
     }
 

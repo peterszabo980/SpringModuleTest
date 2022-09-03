@@ -17,19 +17,19 @@
             <a href="index.html" class="logo"><img src="../static/images/logo.png" alt=""></a>
             <ul id="navigation">
                 <li class="selected">
-                    <a href="index.html">Főoldal</a>
+                    <a href="../templates/index.html">Főoldal</a>
                 </li>
                 <li>
-                    <a href="ships.html">Űrhajók</a>
+                    <a href="../templates/ships.html">Űrhajók</a>
                 </li>
                 <li class="menu">
-                    <a href="crew.html">Legénység</a>
+                    <a href="../templates/crew.html">Legénység</a>
                 </li>
                 <li>
-                    <a href="spaceship_new.html">Regisztráció</a>
+                    <a href="../templates/spaceship_new.html">Regisztráció</a>
                 </li>
                 <li>
-                    <a href="login.html">Belépés</a>
+                    <a href="../templates/login.html">Belépés</a>
                 </li>
             </ul>
         </div>
@@ -38,14 +38,39 @@
 
 <div id="container">
 
-    <form data-th-object="${newShip}">
+    <form data-th-action="@{/spaceship}" data-th-object="${newShip}" method="post">
 
-        <select data-th-field="*{spaceShipClass}">
-            <option data-th-each="shipClass : ${shipClasses}"
-                    data-th-value="${shipClass}"
-                    data-th-text="${shipClass}">
-            </option>
-        </select>
+        <table>
+            <tr>
+                <th>Név:</th>
+                <td><input type="text" data-th-field="*{name}" /></td>
+            </tr>
+            <tr>
+                <th>Osztály:</th>
+                <td>
+                    <select data-th-field="*{spaceShipClass}">
+                        <option data-th-each="shipClass : ${shipClasses}"
+                                data-th-value="${shipClass}"
+                                data-th-text="${shipClass}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Működőképes - aktív?</th>
+                <td>
+                    <select data-th-field="*{isActive}">
+                        <option value="true">Igen.</option>
+                        <option value="false">Nem</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><button class="send_button" type="submit">Regisztrálás</button></td>
+            </tr>
+        </table>
+
+
 
     </form>
 

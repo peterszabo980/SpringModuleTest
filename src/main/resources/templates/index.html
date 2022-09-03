@@ -5,30 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Űrháború</title>
-    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
-    <link rel="stylesheet" type="text/css" href="css/mobile.css">
+    <link rel="stylesheet" data-th-href="@{/css/style.css}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile.css">
     <script src="../static/js/mobile.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="page">
     <div id="header">
         <div>
-            <a href="index.html" class="logo"><img src="../static/images/logo.png" alt=""></a>
+            <a data-th-href="@{/}" class="logo"><img src="../static/images/logo.png" alt=""></a>
             <ul id="navigation">
                 <li class="selected">
-                    <a href="index.html">Főoldal</a>
+                    <a data-th-href="@{/}">Főoldal</a>
                 </li>
                 <li>
-                    <a href="ships.html">Űrhajók</a>
+                    <a data-th-href="@{/ships}">Űrhajók</a>
                 </li>
                 <li class="menu">
-                    <a href="crew.html">Legénység</a>
+                    <a data-th-href="@{/crew}">Legénység</a>
                 </li>
                 <li>
-                    <a href="spaceship_new.html">Regisztráció</a>
+                    <a data-th-href="@{/login}">Belépés</a>
                 </li>
                 <li>
-                    <a href="login.html">Belépés</a>
+                    <a data-th-href="@{/register}">Regisztráció</a>
                 </li>
             </ul>
         </div>
@@ -43,16 +43,16 @@
                 <h3>Űrháború</h3>
                 <ul>
                     <li>
-                        <a href="ships.html"><img src="../static/images/project-image1.jpg" alt=""></a>
+                        <a href="/index.html"><img data-th-src="@{project-image1.jpg}" alt=""></a>
                     </li>
                     <li>
-                        <a href="crew.html"><img src="../static/images/project-image2.jpg" alt=""></a>
+                        <a href="../templates/crew.html"><img src="../static/images/project-image2.jpg" alt=""></a>
                     </li>
                     <li>
-                        <a href="login.html"><img src="../static/images/project-image3.jpg" alt=""></a>
+                        <a href="../templates/login.html"><img src="../static/images/project-image3.jpg" alt=""></a>
                     </li>
                     <li>
-                        <a href="spaceship_new.html"><img src="../static/images/project-image4.jpg" alt=""></a>
+                        <a href="../templates/spaceship_new.html"><img src="../static/images/project-image4.jpg" alt=""></a>
                     </li>
                 </ul>
             </div>

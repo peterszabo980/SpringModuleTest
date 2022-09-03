@@ -36,18 +36,26 @@
     </div>
 </div>
 
-    <div id="container">
-    <div class="form">
-        <h1>Bejelentkezés</h1>
-        <p data-th-if="${loginError}">Rossz adatok. Próbáld újra!</p>
-
-        <form class="form" data-th-action="@{/login}" method="post">
-            <input type="text" data-th-name="username" placeholder="felhasználónév">
-            <input type="password" data-th-name="password" placeholder="jelszó">
-
-            <input type="submit" value="Bejelentkezés!">
+<div id="container">
+    <div>
+        <p data-th-if="${registerError}">A felhasználó név már foglalt.</p>
+        <form data-th-action="@{/register}" data-th-object="${officer}" method="post">
+            <table>
+                <tr>
+                    <th>Név:</th>
+                    <td><input type="text" data-th-field="*{username}" /></td>
+                </tr>
+                <tr>
+                    <th>Jelszó:</th>
+                    <td><input type="text" data-th-field="*{password}" /></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Regisztrálás</button></td>
+                </tr>
+            </table>
         </form>
     </div>
+
 </div>
 
 </body>

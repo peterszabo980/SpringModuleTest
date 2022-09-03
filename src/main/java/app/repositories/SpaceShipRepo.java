@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface SpaceShipRepo extends CrudRepository<SpaceShip, Long> {
-    List<SpaceShip> findByisActiveTrue();
+    List<SpaceShip> findByIsActiveTrue();
 
     SpaceShip findByName(String name);
 }
